@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  openapi:
+    image: swaggerapi/swagger-ui
+    environment:
+    - API_URL=http://localhost:7777/openapi.yml
+    ports:
+    - "7777:8080"
+    volumes:
+    - './docs/openapi.yml:/usr/share/nginx/html/openapi.yml'
