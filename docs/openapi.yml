@@ -4,7 +4,7 @@ info:
   title: FutsalTokyo Agent API
   description: Currently supports reservation for Bonfim court at Ochiai-Minaminagasaki only.
 servers:
-  - url: https://api.futsaltokyo.xyz
+  - url: http://localhost:3000
 paths:
   /bonfim:
     post:
@@ -31,6 +31,7 @@ paths:
                 time:
                   type: string
                   pattern: '^\d{4}-\d{4}$'
+                  example: 1700-1900
       responses:
         '202':
           description: Processing fixture request
@@ -126,6 +127,7 @@ components:
         time:
           type: string
           pattern: '^\d{4}-\d{4}$'
+          example: 1700-1900
     Error:
       required:
         - code

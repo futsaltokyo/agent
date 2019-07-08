@@ -50,13 +50,21 @@ provider:
 #    - exclude-me-dir/**
 
 functions:
-  hello:
-    handler: handler.hello
+  auth:
+    handler: auth.authorize
+    cors: true
+  showBonfimFixtureById:
+    handler: handler.showBonfimFixtureById
+    cors: true
     events:
       - http:
-          path: hello
+          path: bonfim/{id}
           method: get
-          
+          authorizer: auth
+          request:
+            parameters:
+              paths:
+                id: true
 
 package:
   exclude:
