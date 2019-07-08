@@ -1,0 +1,36 @@
+{
+  "name": "agent",
+  "version": "1.0.0",
+  "description": "API for making futsal court reservations",
+  "main": "handler.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/futsaltokyo/agent.git"
+  },
+  "keywords": [
+    "futsal",
+    "tokyo",
+    "reservation",
+    "bot"
+  ],
+  "author": "kelvintaywl@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/futsaltokyo/agent/issues"
+  },
+  "homepage": "https://github.com/futsaltokyo/agent#readme",
+  "devDependencies": {
+    "eslint": "^6.0.1",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-plugin-import": "^2.18.0",
+    "serverless": "^1.46.1",
+    "serverless-offline": "^5.7.1"
+  }
+}
