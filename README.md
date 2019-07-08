@@ -19,6 +19,11 @@ First, make sure you are using the right Node JS environment.
 nvm install  # should install the version specified in .nvmrc
 nvm use
 ```
+Then, simply install, and grab a cup of coffee while at it :coffee:.
+
+```
+npm install  # including dev dependencies
+```
 
 ### Running Serverless Offline
 
@@ -45,11 +50,6 @@ npm run lint
 npm test
 ```
 
-Then, simply install, and grab a cup of coffee while at it :coffee:.
-
-```
-npm install  # including dev dependencies
-```
 
 ### Open API spec
 
