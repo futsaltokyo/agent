@@ -1,6 +1,10 @@
 # agent
 fixture reservations, one HTTP call away :soccer:
 
+## architecture
+
+![architecture](assets/architecture.png)
+
 ## local development
 
 ### Prerequisites
@@ -30,10 +34,10 @@ npm install  # including dev dependencies
 Because we require AWS API Gateway and Lambda functions (with Serverless Framework), we can simply use the [Serverless Offline]() tool to simulate a 'local' API Gateway to invoke our Lambda functions via HTTP interface.
 
 ```
-sls offline &
+sls offline
 
 # test endpoint; FIXME once we implement the API endpoints
-curl -X GET http://localhost:3000/hello
+curl -H '' GET http://localhost:3000/hello
 ```
 
 ### Lint
