@@ -53,13 +53,34 @@ functions:
   auth:
     handler: auth.authorize
     cors: true
+    environment: ${file(serverless-env.yml)}
+  createBonfimFixtureById:
+    handler: http.createBonfimFixtureById
+    cors: true
+    events:
+      - http:
+          path: bonfim
+          method: post
+          authorizer: auth
   showBonfimFixtureById:
-    handler: handler.showBonfimFixtureById
+    handler: http.showBonfimFixtureById
     cors: true
     events:
       - http:
           path: bonfim/{id}
           method: get
+          authorizer: auth
+          request:
+            parameters:
+              paths:
+                id: true
+  deleteBonfimFixtureById:
+    handler: http.deleteBonfimFixtureById
+    cors: true
+    events:
+      - http:
+          path: bonfim/{id}
+          method: delete
           authorizer: auth
           request:
             parameters:

@@ -9,3 +9,8 @@ services:
     - "7777:8080"
     volumes:
     - './docs/openapi.yml:/usr/share/nginx/html/openapi.yml'
+
+  redis:
+    image: redis:alpine
+    ports:
+    - "6379:6379"

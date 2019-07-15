@@ -16,6 +16,8 @@ const generatePolicy = (principalId, effect, resource) => {
   return authResponse;
 };
 
+const { AUTH_USERNAME, AUTH_PASSWORD } = process.env;
+
 module.exports.authorize = (event, context, callback) => {
   const authHeader = event.authorizationToken;
   if (!authHeader) {
@@ -26,8 +28,7 @@ module.exports.authorize = (event, context, callback) => {
   const decoded = Buffer.from(encoded, 'base64').toString('utf-8');
   const [userName, password] = decoded.split(':');
 
-  // FIXME: actual creds to compare via ENV
-  const passed = (userName === 'admin' && password === 'secret');
+  const passed = (userName === AUTH_USERNAME && password === AUTH_PASSWORD);
   if (!passed) {
     return callback('Unauthorized');
   }

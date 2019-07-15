@@ -1,0 +1,9 @@
+# currently, for local env only
+# REPLACE with actual settings
+AUTH_USERNAME: futsaltokyo
+AUTH_PASSWORD: 9$*6C!r%K_BMxja5
+
+REDIS_HOST: 127.0.0.1
+REDIS_PORT: 6379
+REDIS_PASSWORD: ''
+REDIS_TTL: 7776000  # 3 months; 90 days
