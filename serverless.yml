@@ -53,7 +53,7 @@ functions:
   auth:
     handler: auth.authorize
     cors: true
-    environment: ${file(serverless-env.yml)}
+    environment: ${file(env-http-handlers.yml)}
   createBonfimFixtureById:
     handler: http.createBonfimFixtureById
     cors: true

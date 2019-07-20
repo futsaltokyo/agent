@@ -88,4 +88,4 @@ typings/
 .dynamodb/
 
 # custom; env files
-serverless-env.yml
+env-*.yml

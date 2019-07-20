@@ -25,29 +25,28 @@ nvm use
 ```
 Then, simply install, and grab a cup of coffee while at it :coffee:.
 
-```
+```sh
 npm install  # including dev dependencies
 ```
 
 ### Setup env vars
 
-Copy the `sample-env.yml.sample` YAML file into `serverless-env.yml`, modifying the secrets to your own needs.
+We provided sample env files in the names of `env-*.yml.sample`. You can copy these sample files, removing the `.sample` extension.
 
-> `serverless-env.yml` file is required to load env vars in `serverless.yml`.
-
+Please modify the environment variables accordingly.
 
 ### Running Serverless Offline
 
 Because we require AWS API Gateway and Lambda functions (with [Serverless Framework](https://serverless.com/)), we can simply use the [Serverless Offline](https://github.com/dherault/serverless-offline) tool to simulate a 'local' API Gateway to invoke our Lambda functions via HTTP interface.
 
-```
+```sh
 # NOTE: local server will be listening on port 3000
 sls offline
 ```
 
 ### Setup and Run dependencies
 
-```
+```sh
 # runs both Redis container and Swagger UI for API testing;
 # Else, run the services individually if preferred
 docker-compose up
@@ -55,7 +54,7 @@ docker-compose up
 
 #### Testing API endpoints locally
 
-```
+```sh
 # using o'fashioned curl to create a fixture request
 curl -H 'Authorization: Basic [username:password encoded in base64]'\
  -H 'Content-Type: application/json'\
@@ -72,13 +71,13 @@ If a graphical UI is preferred instead, check out how to [test using Swagger UI]
 
 We use Eslint for linting, and follow the now-classic [Airbnb Eslint config](https://www.npmjs.com/package/eslint-config-airbnb).
 
-```
+```sh
 npm run lint
 ```
 
 ### Unit Tests
 
-```
+```sh
 npm test
 ```
 
