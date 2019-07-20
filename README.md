@@ -34,11 +34,32 @@ npm install  # including dev dependencies
 Because we require AWS API Gateway and Lambda functions (with [Serverless Framework](https://serverless.com/)), we can simply use the [Serverless Offline](https://github.com/dherault/serverless-offline) tool to simulate a 'local' API Gateway to invoke our Lambda functions via HTTP interface.
 
 ```
+# NOTE: local server will be listening on port 3000
 sls offline
-
-# test endpoint; FIXME once we implement the API endpoints
-curl -H '' GET http://localhost:3000/hello
 ```
+
+### Setup and Run dependencies
+
+```
+# runs both Redis container and Swagger UI for API testing;
+# Else, run the services individually if preferred
+docker-compose up
+```
+
+#### Testing API endpoints locally
+
+```
+# using o'fashioned curl to create a fixture request
+curl -H 'Authorization: Basic [username:password encoded in base64]'\
+ -H 'Content-Type: application/json'\
+  -X POST\
+ -d '{"court": "outdoor", "date": "2020-12-32", "time": "1700-1900"}'\
+ http://localhost:3000/bonfim\
+  | jq ".id"
+ # (optional) you can also pipe the response to jq and get the id
+```
+
+If a graphical UI is preferred instead, check out how to [test using Swagger UI](#Open_API_spec)
 
 ### Lint
 
@@ -53,7 +74,6 @@ npm run lint
 ```
 npm test
 ```
-
 
 ### Open API spec
 
