@@ -11,9 +11,9 @@ fixture reservations, one HTTP call away :soccer:
 
 | tools | remarks |
 | --- | --- |
-| [Docker]() | required |
+| [Docker](https://docs.docker.com/install/) | required |
 | [nvm](https://github.com/nvm-sh/nvm) | for managing your Node JS environment |
-| [Redis (_optional_)]() | if you prefer running a Redis instance on host machine; else see docker-compose file |
+| [Redis (_optional_)](https://redis.io/) | if you prefer running a Redis instance on host machine; else see docker-compose file |
 
 ### Install JS depedencies
 
@@ -31,7 +31,7 @@ npm install  # including dev dependencies
 
 ### Running Serverless Offline
 
-Because we require AWS API Gateway and Lambda functions (with Serverless Framework), we can simply use the [Serverless Offline]() tool to simulate a 'local' API Gateway to invoke our Lambda functions via HTTP interface.
+Because we require AWS API Gateway and Lambda functions (with [Serverless Framework](https://serverless.com/)), we can simply use the [Serverless Offline](https://github.com/dherault/serverless-offline) tool to simulate a 'local' API Gateway to invoke our Lambda functions via HTTP interface.
 
 ```
 sls offline
