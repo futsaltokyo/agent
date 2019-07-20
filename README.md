@@ -29,6 +29,13 @@ Then, simply install, and grab a cup of coffee while at it :coffee:.
 npm install  # including dev dependencies
 ```
 
+### Setup env vars
+
+Copy the `sample-env.yml.sample` YAML file into `serverless-env.yml`, modifying the secrets to your own needs.
+
+> `serverless-env.yml` file is required to load env vars in `serverless.yml`.
+
+
 ### Running Serverless Offline
 
 Because we require AWS API Gateway and Lambda functions (with [Serverless Framework](https://serverless.com/)), we can simply use the [Serverless Offline](https://github.com/dherault/serverless-offline) tool to simulate a 'local' API Gateway to invoke our Lambda functions via HTTP interface.
