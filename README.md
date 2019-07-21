@@ -40,8 +40,8 @@ Please modify the environment variables accordingly.
 Because we require AWS API Gateway and Lambda functions (with [Serverless Framework](https://serverless.com/)), we can simply use the [Serverless Offline](https://github.com/dherault/serverless-offline) tool to simulate a 'local' API Gateway to invoke our Lambda functions via HTTP interface.
 
 ```sh
-# NOTE: local server will be listening on port 3000
-sls offline
+# NOTE: local server will be listening on port 7001
+sls offline --printOutput
 ```
 
 ### Setup and Run dependencies
@@ -59,8 +59,8 @@ docker-compose up
 curl -H 'Authorization: Basic [username:password encoded in base64]'\
  -H 'Content-Type: application/json'\
   -X POST\
- -d '{"court": "outdoor", "date": "2020-12-32", "time": "1700-1900"}'\
- http://localhost:3000/bonfim\
+ -d '{"court": "outdoor", "date": "2020-12-31", "time": "1700-1900"}'\
+ http://localhost:7001/bonfim\
   | jq ".id"
  # (optional) you can also pipe the response to jq and get the id
 ```
